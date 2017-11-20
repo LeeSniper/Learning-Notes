@@ -23,16 +23,24 @@
 - git reflog 记录每一次命令操作
 
 #### 3、分支管理
+- git remote -v	查看远程服务器地址和仓库名称
+- git remote show origin	查看远程服务器仓库状态
 - git remote add <name> git@server-name:path/repo-name.git 关联一个远程库
+- git remote set-head origin master 设置远程仓库的HEAD指向master分支
+- git remote set-url <name> git@server-name:path/repo-name.git	设置远程仓库地址（用于修改远成仓库地址）
+- git remote rm git@server-name:path/repo-name.git	删除远程仓库
 - git clone git@server-name:path/repo-name.git 克隆一个本地库
 - git push -u origin master 把当前本地库推送到空的远程库，-u会把本地分支和远程分支相关联
 - git push origin master 把本地分支推送到远程库
+- git push origin HEAD:feature/V2.0.1
 - git branch 查看本地所有分支
 - git branch <name> 新建本地分支
 - git branch -a 查看本地和远程的所有分支
 - git branch -r 查看所有远程分支
 - git branch -av 查看本地和远程的所有分支和详细信息
 - git branch -d <name> 删除该分支
+- git branch --set-upstream-to=<destiny> <yourbranch>
+- git branch --set-upstream-to=origin/<branch> feature/setting
 - git checkout <name> 切换分支
 - git checkout -b <name> 创建并切换分支
 - git checkout -b <name> origin/dev 创建对应远端dev分支的本地分支
@@ -41,7 +49,13 @@
 
 - git log --graph 查看分支合并图
 
-fork之后进行代码同步
+#### 4、暂存管理
+- git stash	暂存
+- git stash list	列出所有stash
+- git stash apply	恢复暂存的内容
+- git stash drop	删除暂存区
+
+## fork之后进行代码同步
 
 1，列出远程仓库的目录  git remote -v 默认clone后远程仓库的名字为origin，这是fork之后的项目。
 
@@ -63,8 +77,7 @@ fork之后进行代码同步
 - git log .
 
 
-- git branch --set-upstream-to=<destiny> <yourbranch>
-- git branch --set-upstream-to=origin/<branch> feature/setting
+
 
 
 ## git SubModule的使用
