@@ -16,6 +16,11 @@
 
 1、activity被销毁
 
+	Fatal Exception: android.view.WindowManager$BadTokenException: Unable to add window -- token android.os.BinderProxy@1689932 is not valid; is your activity running?
+       at android.view.ViewRootImpl.setView(ViewRootImpl.java:705)
+       at android.view.WindowManagerGlobal.addView(WindowManagerGlobal.java:342)
+       at android.view.WindowManagerImpl.addView(WindowManagerImpl.java:94)
+       at android.app.Dialog.show(Dialog.java:322)
 
 
 2、不能使用application context
