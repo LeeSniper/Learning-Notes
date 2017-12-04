@@ -79,8 +79,7 @@ layer表示图层，layer-list就是指图层列表，每一个Item元素代表�
 ### 语法
 
 	<?xml version="1.0" encoding="utf-8"?>
-	<level-list
-    	xmlns:android="http://schemas.android.com/apk/res/android" >
+	<level-list xmlns:android="http://schemas.android.com/apk/res/android" >
     	<item
         	android:drawable="@drawable/drawable_resource"
         	android:maxLevel="integer"
