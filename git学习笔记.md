@@ -12,6 +12,8 @@
 - git add <file> 添加文件或者把对文件的修改添加到暂存区
 - git add --all 添加所有修改到暂存区
 - git commit -m 提交修改，-m之后是本次提交的说明
+- git commit -s -s表示添加签名信息，就像“Signed-off-by: lixiang <lixiang@126.com>”这样
+- git commit -amend
 - git status 查看仓库当前状态，查看哪些文件被修改过
 - git diff 查看哪些内容被修改
 - git log 按照从近到远的顺序，显示提交日志
@@ -33,6 +35,7 @@
 - git push -u origin master 把当前本地库推送到空的远程库，-u会把本地分支和远程分支相关联
 - git push origin master 把本地分支推送到远程库
 - git push origin HEAD:feature/V2.0.1
+- git push origin HEAD:refs/for/master 提交到 gerrit 上面
 - git branch 查看本地所有分支
 - git branch <name> 新建本地分支
 - git branch -a 查看本地和远程的所有分支
@@ -51,9 +54,12 @@
 
 #### 4、暂存管理
 - git stash	暂存
-- git stash list	列出所有stash
-- git stash apply	恢复暂存的内容
-- git stash drop	删除暂存区
+- git stash list	列出所有 stash 的进度列表
+- git stash pop 	恢复最新的进度到工作区（工作区和暂存区都恢复到工作区）
+- git stash pop --index 恢复最新的进度到工作区和暂存区（尝试将原来暂存区的改动还恢复到暂存区）
+- git stash apply	恢复暂存的内容，但是不删除进度，此外和 pop 命令一样
+- git stash drop [stash_id]	删除一个进度
+- git stash clear 	删除所有进度
 
 ## fork之后进行代码同步
 
@@ -138,3 +144,11 @@ clone项目的时候，如果包含submodule，需要执行
 [参考文章1](http://blog.csdn.net/d_clock/article/details/43602699)
 
 [参考文章2](http://blog.csdn.net/d_clock/article/details/43730449)
+
+
+## SSH Key
+生成 SSH Key
+
+	ssh-keygen -t rsa
+	cat ~/.ssh/id_rsa.pub
+	
