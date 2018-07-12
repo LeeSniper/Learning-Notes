@@ -151,4 +151,25 @@ clone项目的时候，如果包含submodule，需要执行
 
 	ssh-keygen -t rsa
 	cat ~/.ssh/id_rsa.pub
+
+
+## git 快捷键设置
+
+### git 配置文件
+
+- 仓库级配置文件：位于当前仓库下，只对当前仓库生效
+- 全局级配置文件：
+- 系统级配置文件：
+
+#### git config 命令查看配置文件
+
+	git config [--local|--global|--system] -l #[]中的参数设置查看的配置文件的级别，-l 是 -list 的缩写
+
+#### git config 命令修改配置文件
+修改单条配置
+
+	git config --global alias.s status #代表输入git s就代表git status
 	
+修改配置文件
+
+	git config [--local|--global|--system] -e #[]内的参数同上，-e 是 -edit 的缩写，打开文件之后按键盘上的 I 键就可以输入，修改完之后按 Esc 退出编辑，输入 ：wq 保存退出。
