@@ -61,6 +61,17 @@
 - git stash drop [stash_id]	删除一个进度
 - git stash clear 	删除所有进度
 
+## commit 之后如何修改
+#### 修改上一个提交
+如果要修改最近的一个提交，只需要使用
+- git commit --amend
+
+#### 修改之前的提交（例如倒数第二个提交）
+1、使用 git rebase -i 需要修改的之前一个提交
+2、执行命令之后，将需要修改的提交前面的 pick 改成 edit
+3、修改你要修改的内容，用 git commit --amend 提交修改
+4、执行 git rebase --continue 恢复后面的提交
+
 ## fork之后进行代码同步
 
 1，列出远程仓库的目录  git remote -v 默认clone后远程仓库的名字为origin，这是fork之后的项目。
