@@ -79,7 +79,7 @@
 2，与原项目进行关联  git remote add upstream <原项目地址>，这样就为本地的代码添加了原项目作为远程仓库，名字为upstream
 
 3，将原项目的更新同步到本地  git fetch upstream 从原项目获取更新，放到upstream/master分支上，
-本地切换到master分支上  git checkout master  
+本地切换到master分支上  git checkout master
 将upstream/master分支和本地的master分支合并   git merge upstream/master
 将本地同步过后的代码push到GitHub上。
 
