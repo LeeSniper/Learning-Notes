@@ -18,11 +18,15 @@
 - git diff 查看哪些内容被修改
 - git log 按照从近到远的顺序，显示提交日志
 - git log --pretty=oneline 单行显示提交日志
-- git reset --hard HEAD^ 回退到上一版本，^^回退两个版本
-- git reset --hard <版本号>  回退到指定版本，可以通过log查看版本号
+- git reset --hard HEAD^ 回退到上一版本，^^回退两个版本，不保留之后的代码修改
+- git reset --hard <版本号>  回退到指定版本，并且不保留之后的代码修改，可以通过log查看版本号
+- git reset <版本号> 回退到指定版本，但是仍然保留该版本之后的代码修改，可以重新 commit
+- git reset --mixed HEAD^  效果同上，撤销 commit 同时也撤销 add
+- git reset --soft HEAD^ 撤销 commit 但是不撤销 add
 - git checkout -- <file> 可以在提交之前舍弃对工作区文件的修改
 - git reset HEAD <file> 撤销对暂存区文件的修改
-- git reflog 记录每一次命令操作
+- git reflog 查看之前的每一次命令操作
+- git reset HEAD@{1} 可以撤销之前的某次 git 操作，可以通过 reflog 查看操作历史
 
 #### 3、分支管理
 - git remote -v	查看远程服务器地址和仓库名称
